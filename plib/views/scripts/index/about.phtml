@@ -1,0 +1,22 @@
+<?php
+// Copyright 1999-2016. Parallels IP Holdings GmbH.
+?>
+<?php echo $this->renderTabs($this->tabs); ?>
+<p>
+<?php echo $this->about; ?>
+</p>
+<p>
+<?php echo $this->feedback; ?>
+</p>
+<p>
+<?php echo $this->faq; ?>
+
+<?php
+    foreach ($this->faqItems as $item) {
+        echo '<p><b>';
+            echo $item['question'];
+        echo '</b><br />';
+        echo $item['answer'];
+        echo '</p>';
+    }
+?>

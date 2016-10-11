@@ -1,0 +1,15 @@
+<?php
+// Copyright 1999-2016. Parallels IP Holdings GmbH.
+?>
+
+<?php echo $this->renderTabs($this->tabs); ?>
+
+<?php echo $this->renderTools($this->tools); ?>
+
+<?php echo $this->renderList($this->list); ?>
+
+<?php
+$htdocs = pm_Context::getBaseUrl();
+echo "<script type='text/javascript' src='${htdocs}/js/amazon-backup.js'></script>";
+?>
+

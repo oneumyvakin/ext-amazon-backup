@@ -1,0 +1,12 @@
+[submodule "backend/vendor/github.com/oneumyvakin/amazons3"]
+	path = backend/vendor/github.com/oneumyvakin/amazons3
+	url = https://github.com/oneumyvakin/amazons3.git
+[submodule "backend/vendor/github.com/oneumyvakin/ntp"]
+	path = backend/vendor/github.com/oneumyvakin/ntp
+	url = https://github.com/oneumyvakin/ntp.git
+[submodule "backend/vendor/github.com/oneumyvakin/osext"]
+	path = backend/vendor/github.com/oneumyvakin/osext
+	url = https://github.com/oneumyvakin/osext.git
+[submodule "backend/vendor/github.com/oneumyvakin/plesk"]
+	path = backend/vendor/github.com/oneumyvakin/plesk
+	url = https://github.com/oneumyvakin/plesk.git

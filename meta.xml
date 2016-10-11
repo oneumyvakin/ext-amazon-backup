@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 1999-2016. Parallels IP Holdings GmbH. -->
+<module>
+  <id>backup-amazon</id>
+  <name>Backup to Amazon S3</name>
+  <description>Keep Plesk server backups on Amazon S3.</description>
+  <description xml:lang="ru-RU">Сохраняет серверные резервные копии Plesk на Amazon S3.</description>
+  <version>1.0</version>
+  <release>1</release>
+  <vendor>Plesk</vendor>
+  <url>https://github.com/plesk/ext-backup-amazon</url>
+  <plesk_min_version>17.0.17</plesk_min_version>
+</module>
