@@ -36,6 +36,7 @@ $messages = array(
     'AccessDenied' => 'Amazon S3 Access denied, check Amazon user\'s permissions and security policy',
     'failedQueryNtpServer' => 'Failed to check local time: %%error%%',
     'gapInTime' => 'Gap in local and real time detected, local time is %%local%%, real time is %%real%%, gap in time is %%diff%%',
+    'RequestTimeTooSkewed' => 'The difference between the request time and the current time is too large.',
     'settingsWasSuccessfullySaved' => 'Settings were successfully saved',
 
     'date' => 'Date',
