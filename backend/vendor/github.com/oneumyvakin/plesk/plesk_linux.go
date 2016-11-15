@@ -43,7 +43,7 @@ func (self Plesk) getSettingsFromPsaConf() (settings map[string]string, err erro
 		match := pattern.FindStringSubmatch(line)
 
 		if match != nil {
-			settings[match[1]] = match[2]
+			settings[strings.TrimSpace(match[1])] = strings.TrimSpace(match[2])
 		}
 
 	}
