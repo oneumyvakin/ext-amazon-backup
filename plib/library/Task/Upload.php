@@ -5,6 +5,7 @@ class Modules_BackupAmazon_Task_Upload extends pm_LongTask_Task // Since Plesk 1
 {
     const UID = 'upload';
     public $trackProgress = false;
+    public $hasDangerousMessage = true;
 
     private $result = [];
     private $backupName;
@@ -41,6 +42,7 @@ class Modules_BackupAmazon_Task_Upload extends pm_LongTask_Task // Since Plesk 1
             case static::STATUS_DONE:
                 return pm_Locale::lmsg('uploadTaskDone', $localeArgs) . $linkToExtensionHome;
             case static::STATUS_ERROR:
+                $this->hasDangerousMessage = false;
                 $localeArgs['error'] = $this->getParam('onError', 'none');
                 return pm_Locale::lmsg('uploadTaskError', $localeArgs) . $linkToExtensionHome;
         }

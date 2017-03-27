@@ -5,6 +5,7 @@ class Modules_BackupAmazon_Task_Download extends pm_LongTask_Task // Since Plesk
 {
     const UID = 'download';
     public $trackProgress = false;
+    public $hasDangerousMessage = true;
 
     private $result = [];
     private $remotePath;
@@ -40,6 +41,7 @@ class Modules_BackupAmazon_Task_Download extends pm_LongTask_Task // Since Plesk
             case static::STATUS_DONE:
                 return pm_Locale::lmsg('downloadTaskDone', $localeArgs) . $linkToExtensionHome;
             case static::STATUS_ERROR:
+                $this->hasDangerousMessage = false;
                 $localeArgs['error'] = $this->getParam('onError', 'none') . $linkToExtensionHome;
                 return pm_Locale::lmsg('downloadTaskError', $localeArgs);
         }

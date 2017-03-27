@@ -5,6 +5,7 @@ class Modules_BackupAmazon_Task_CancelUpload extends pm_LongTask_Task // Since P
 {
     const UID = 'cancelUpload';
     public $trackProgress = false;
+    public $hasDangerousMessage = true;
 
     private $result = [];
     private $backupName;
@@ -49,6 +50,7 @@ class Modules_BackupAmazon_Task_CancelUpload extends pm_LongTask_Task // Since P
             case static::STATUS_DONE:
                 return pm_Locale::lmsg('cancelUploadTaskDone', $localeArgs) . $linkToExtensionHome;
             case static::STATUS_ERROR:
+                $this->hasDangerousMessage = false;
                 $localeArgs['error'] = $this->getParam('onError', 'none');
                 return pm_Locale::lmsg('cancelUploadTaskError', $localeArgs) . $linkToExtensionHome;
             case static::STATUS_CANCELED:

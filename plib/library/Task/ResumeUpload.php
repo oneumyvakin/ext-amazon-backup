@@ -5,6 +5,7 @@ class Modules_BackupAmazon_Task_ResumeUpload extends pm_LongTask_Task // Since P
 {
     const UID = 'resumeUpload';
     public $trackProgress = false;
+    public $hasDangerousMessage = true;
 
     private $result = [];
     private $backupName;
@@ -43,6 +44,7 @@ class Modules_BackupAmazon_Task_ResumeUpload extends pm_LongTask_Task // Since P
             case static::STATUS_DONE:
                 return pm_Locale::lmsg('resumeUploadTaskDone', $localeArgs) . $linkToExtensionHome;
             case static::STATUS_ERROR:
+                $this->hasDangerousMessage = false;
                 $localeArgs['error'] = $this->getParam('onError', 'none');
                 return pm_Locale::lmsg('resumeUploadTaskError', $localeArgs) . $linkToExtensionHome;
         }

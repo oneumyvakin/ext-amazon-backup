@@ -7,6 +7,7 @@ class Modules_BackupAmazon_Task_UploadAll extends pm_LongTask_Task // Since Ples
 
     public $hidden = false;
     public $trackProgress = false;
+    public $hasDangerousMessage = true;
 
     private $result = [];
 
@@ -45,6 +46,7 @@ class Modules_BackupAmazon_Task_UploadAll extends pm_LongTask_Task // Since Ples
             case static::STATUS_DONE:
                 return pm_Locale::lmsg('uploadAllTaskDone', $localeArgs) . $linkToExtensionHome;
             case static::STATUS_ERROR:
+                $this->hasDangerousMessage = false;
                 $localeArgs['error'] = $this->getParam('onError', 'none');
                 return pm_Locale::lmsg('uploadAllTaskError', $localeArgs) . $linkToExtensionHome;
         }
